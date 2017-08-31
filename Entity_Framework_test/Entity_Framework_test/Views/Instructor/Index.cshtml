@@ -1,0 +1,34 @@
+﻿@using Entity_Framework_test.Models;
+@model IEnumerable<Instructor>
+@{ViewBag.Title = "Index";}
+
+
+<h2>Instructor Index</h2>
+
+<a href="/Instructor/Create">Add Instructor</a>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Email</td>
+                <td>@item.Password</td>
+                <td>@Html.ActionLink("Edit", "Edit", new { id = item.Id })</td>
+                <td>@Html.ActionLink("Delete", "Delete", new { id = item.Id })</td>
+            </tr>
+        }
+    </tbody>
+</table>

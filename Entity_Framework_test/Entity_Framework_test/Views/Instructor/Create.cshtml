@@ -1,0 +1,28 @@
+﻿
+@using Entity_Framework_test.Models;
+@model IEnumerable<Instructor>
+@{
+    ViewBag.Title = "Create";
+}
+<a href="/Instructor/Index">Index</a>
+
+<h2>Create Instructor</h2>
+
+<form action="/Instructor/Create" method="post">
+    <div class="form-group">
+        <label for="Name_id">Name</label>
+        <input required type="text" class="form-control" name="Name"
+               id="Name_id" placeholder="Name input">
+    </div><br />
+    <div class="form-group">
+        <label for="Email_id">Email</label>
+        <input type="text" class="form-control" name="Email"
+               id="Email_id" placeholder="Email input">
+    </div><br />
+    <div class="form-group">
+        <label for="Password_id">Password</label>
+        <input type="Password" class="form-control" name="Password"
+               id="Password_id" placeholder="Password input">
+    </div><br />
+    <input type="submit" value="Add Instructor" />
+</form>
